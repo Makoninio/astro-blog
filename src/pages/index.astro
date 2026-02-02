@@ -1,9 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
+import campus from "../assets/Campus.jpg";
+import coworkers from "../assets/Coworkers.png";
 const pageTitle = "Home Page";
+
 ---
 <BaseLayout pageTitle={pageTitle}>
+	<section class="panelgrid">
+		<a href="/campus/" class="panel">
+			<img src={campus.src}  />
+			<div class="panel-label">
+				<p class="kicker">For Davidson</p>
+				<h2 class="panel-title">CAMPUS</h2>
+			</div>
+		</a>
+
+		<a href="/coworkers/" class="panel panel-teal">
+			<img src={coworkers.src} />
+			<div class="panel-label">
+				<p class="kicker">For Community</p>
+				<h2 class="panel-title">COWORKERS</h2>
+			</div>
+		</a>
+	</section>
+	
   <h2>My awesome blog subtitle</h2>
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
